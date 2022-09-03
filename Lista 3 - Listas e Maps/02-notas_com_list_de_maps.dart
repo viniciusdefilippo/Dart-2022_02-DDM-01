@@ -32,20 +32,20 @@ int calcularAlunosAcimaMedia(double media) {
 
 void printListaAlunos(List<Map<String, dynamic>> lista) {
   for (var aluno in lista) {
-    print('${aluno['nome']}: ${aluno['nota']}');
+    print('${aluno['nome']} (${aluno['email']}): ${aluno['nota']}');
   }
 }
 
 List<Map<String, dynamic>> alunos = [
-  {'nome': 'Ana', 'nota': 5.6},
-  {'nome': 'Pedro', 'nota': 8.7},
-  {'nome': 'Gabriele', 'nota': 7.8},
-  {'nome': 'Cristina', 'nota': 8.6},
-  {'nome': 'Fernando', 'nota': 6.8},
-  {'nome': 'Edson', 'nota': 9.8},
-  {'nome': 'Mariana', 'nota': 6.9},
-  {'nome': 'Clarissa', 'nota': 8.4},
-  {'nome': 'Roberto', 'nota': 7.2},
+  {'nome': 'Ana', 'email': 'ana@mail.com', 'nota': 5.6},
+  {'nome': 'Pedro', 'email': 'pedro@mail.com', 'nota': 8.7},
+  {'nome': 'Gabriele', 'email': 'gabriele@mail.com', 'nota': 7.8},
+  {'nome': 'Cristina', 'email': 'cristina@mail.com', 'nota': 8.6},
+  {'nome': 'Fernando', 'email': 'fernando@mail.com', 'nota': 6.8},
+  {'nome': 'Edson', 'email': 'edson@mail.com', 'nota': 9.8},
+  {'nome': 'Mariana', 'email': 'mariana@mail.com', 'nota': 6.9},
+  {'nome': 'Clarissa', 'email': 'clarissa@mail.com', 'nota': 8.4},
+  {'nome': 'Roberto', 'email': 'roberto@mail.com', 'nota': 7.2},
 ];
 
 List<Map<String, dynamic>> alunosAcimaMedia = [];

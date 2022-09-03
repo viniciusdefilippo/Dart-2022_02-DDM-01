@@ -26,38 +26,53 @@ int calcularAlunosAcimaMedia(double media) {
   return cont;
 }
 
-void preencherNotasAleatorias() {
-  for (var aluno in alunos) {
+void preencherListaAlunos() {
+  for (var i = 0; i < nomes.length; i++) {
+    Map<String, dynamic> aluno = {};
+    aluno['nome'] = nomes[i];
+    aluno['email'] = emails[i];
     aluno['nota'] = minMaxRandomDouble(min: 7, max: 10);
+    alunos.add(aluno);
   }
 }
 
 void printListaAlunos(List<Map<String, dynamic>> lista) {
   for (var aluno in lista) {
-    print('${aluno['nome']}: ${aluno['nota'].toStringAsFixed(1)}');
+    print(
+        '${aluno['nome']} (${aluno['email']}): ${aluno['nota'].toStringAsFixed(1)}');
   }
 }
 
-List<Map<String, dynamic>> alunos = [
-  {'nome': 'Ana', 'nota': 5.6},
-  {'nome': 'Pedro', 'nota': 8.7},
-  {'nome': 'Gabriele', 'nota': 7.8},
-  {'nome': 'Cristina', 'nota': 8.6},
-  {'nome': 'Fernando', 'nota': 6.8},
-  {'nome': 'Edson', 'nota': 9.8},
-  {'nome': 'Mariana', 'nota': 6.9},
-  {'nome': 'Clarissa', 'nota': 8.4},
-  {'nome': 'Roberto', 'nota': 7.2},
+List<Map<String, dynamic>> alunos = [];
+List<String> nomes = [
+  'Ana',
+  'Pedro',
+  'Cristina',
+  'Fernando',
+  'Edson',
+  'Mariana',
+  'Clarissa',
+  'Roberto'
+];
+
+List<String> emails = [
+  'ana@mail.com',
+  'pedro@mail.com',
+  'cristina@mail.com',
+  'fernando@mail.com',
+  'edson@mail.com',
+  'mariana@mail.com',
+  'clarissa@mail.com',
+  'roberto@mail.com'
 ];
 
 List<Map<String, dynamic>> alunosAcimaMedia = [];
 
 void main() {
   cls();
-  preencherNotasAleatorias();
+  preencherListaAlunos();
   printTitle('Notas com List de Maps', '=');
   printListaAlunos(alunos);
-  print('------------------------------------------');
   var media = calcularMedia();
   print('Média da turma: ${media.toStringAsFixed(2)}');
   print('Qtd. alunos acima da média: ${calcularAlunosAcimaMedia(media)}');
